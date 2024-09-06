@@ -29,6 +29,9 @@ jobs:
     - name: Set Pico SDK path
       run: echo "export PICO_SDK_PATH=$PWD/Firmware/src/pico-sdk" >> $GITHUB_ENV
 
+    - name: Clone Pico SDK
+      run: git clone https://github.com/raspberrypi/pico-sdk.git Firmware/src/pico-sdk
+
     - name: Run build script
       run: ./Firmware/src/build.sh
       shell: bash
