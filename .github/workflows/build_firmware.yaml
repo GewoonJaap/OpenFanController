@@ -24,5 +24,5 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y cmake
 
     - name: Run build script
-      run: ./build.sh
+      run: ./Firmware/src/build.sh
       shell: bash
