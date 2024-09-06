@@ -26,6 +26,9 @@ jobs:
     - name: Prepare build script
       run: chmod +x Firmware/src/build.sh
 
+    - name: Set Pico SDK path
+      run: echo "export PICO_SDK_PATH=$PWD/Firmware/src/pico-sdk" >> $GITHUB_ENV
+
     - name: Run build script
       run: ./Firmware/src/build.sh
       shell: bash
