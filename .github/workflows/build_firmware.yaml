@@ -1,0 +1,28 @@
+name: Build Firmware
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Git submodules
+      run: git submodule update --init --recursive
+
+    - name: Install CMake
+      run: sudo apt-get update && sudo apt-get install -y cmake
+
+    - name: Run build script
+      run: ./build.sh
+      shell: bash
