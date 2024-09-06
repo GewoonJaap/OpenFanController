@@ -23,6 +23,9 @@ jobs:
     - name: Install CMake
       run: sudo apt-get update && sudo apt-get install -y cmake
 
+    - name: Prepare build script
+      run: chmod +x Firmware/src/build.sh
+
     - name: Run build script
       run: ./Firmware/src/build.sh
       shell: bash
