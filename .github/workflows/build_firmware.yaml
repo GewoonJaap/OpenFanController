@@ -20,8 +20,10 @@ jobs:
     - name: Set up Git submodules
       run: git submodule update --init --recursive
 
-    - name: Install CMake
-      run: sudo apt-get update && sudo apt-get install -y cmake
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake gcc-arm-none-eabi
 
     - name: Prepare build script
       run: chmod +x Firmware/src/build.sh
