@@ -10,6 +10,8 @@ main() {
 		git submodule update --init --recursive
 	fi
 
+	export PICO_SDK_PATH=$PICO_SDK_DIR
+
 	cmake -B $BUILD_DIR -S $BASE_DIR
 	make -C $BUILD_DIR
 }
